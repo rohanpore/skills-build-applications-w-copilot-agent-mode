@@ -1,7 +1,7 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Types } from 'mongoose';
 
 export interface IActivity {
-  userId: string;
+  userId: Types.ObjectId;
   type: string;
   durationMinutes: number;
   caloriesBurned: number;

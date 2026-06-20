@@ -1,8 +1,8 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Types } from 'mongoose';
 
 export interface ILeaderboardEntry {
-  userId: string;
-  teamId?: string;
+  userId: Types.ObjectId;
+  teamId?: Types.ObjectId;
   score: number;
   rank: number;
 }

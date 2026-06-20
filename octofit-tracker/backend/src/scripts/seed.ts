@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { Types } from 'mongoose';
 import User from '../models/User.js';
 import Team from '../models/Team.js';
 import Activity from '../models/Activity.js';
@@ -33,9 +33,9 @@ async function seed() {
     { name: 'Peak Performers', description: 'High intensity indoor training team', members: [users[2]._id] }
   ]);
 
-  users[0].teamId = teams[0]._id;
-  users[1].teamId = teams[0]._id;
-  users[2].teamId = teams[1]._id;
+  users[0].teamId = teams[0]._id as Types.ObjectId;
+  users[1].teamId = teams[0]._id as Types.ObjectId;
+  users[2].teamId = teams[1]._id as Types.ObjectId;
   await Promise.all(users.map((user) => user.save()));
 
   const activities = await Activity.create([

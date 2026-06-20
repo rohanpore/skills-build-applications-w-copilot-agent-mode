@@ -1,9 +1,9 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Types } from 'mongoose';
 
 export interface ITeam {
   name: string;
   description: string;
-  members: string[];
+  members: Types.ObjectId[];
 }
 
 const teamSchema = new Schema<ITeam>({
